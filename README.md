@@ -6,7 +6,7 @@ A python utility library to verify an Azure Active Directory OAuth token. Meant 
 ## Install
 
 ```bash
-python3 -m pip install -U aad-token-verify
+python3 -m pip install aad-token-verify
 ```
 
 ## Usage
