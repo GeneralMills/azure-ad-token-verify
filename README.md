@@ -16,7 +16,7 @@ To use stand alone, simply import the verify payload function and call.
 ```python
 from aad_token_verify import get_verified_payload
 
-token_verifier = AzureADTokenVerifier(tenant_id="YOUR_TENANT_ID", audience_uris=["AUDIENCE_URI"])
+token_verifier = get_verified_payload(token, tenant_id="YOUR_TENANT_ID", audience_uris=["AUDIENCE_URI"])
 ```
 
 To use with FastAPI, there's some setup to get the Swagger docs to work
