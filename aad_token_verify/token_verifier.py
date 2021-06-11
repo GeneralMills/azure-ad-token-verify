@@ -1,16 +1,16 @@
-from typing import Any, List, Dict
+from typing import Any, Dict, List
 
 import requests
+from cachetools import TTLCache, cached
 from cryptography.hazmat.backends import default_backend
 from cryptography.x509 import load_pem_x509_certificate
 from jwt import decode, get_unverified_header
 from jwt.exceptions import ExpiredSignatureError, InvalidAudienceError, InvalidIssuerError
 
+from .exceptions.aad_error import AADError
 from .exceptions.authorization_error import AuthorizationError
 from .exceptions.token_parse_error import TokenParseError
-from .exceptions.aad_error import AADError
 
-from cachetools import cached, TTLCache
 
 def get_verified_payload(token: str, tenant_id: str = "common", audience_uris: List[str] = None) -> Dict[str, Any]:
     """Gets a verified token payload
@@ -49,6 +49,7 @@ def get_verified_payload(token: str, tenant_id: str = "common", audience_uris: L
 
     return payload
 
+
 def _get_kid_from_token_header(token: str) -> str:
     """Retirieves the KID from the token header
 
@@ -75,6 +76,7 @@ def _get_kid_from_token_header(token: str) -> str:
         raise TokenParseError("No kid in header found")
 
     return unverified_token_header.get("kid")
+
 
 def _get_public_key(kid: str, tenant_id: str):
     """Retrieves the tenant public key using a token's KID
@@ -104,6 +106,7 @@ def _get_public_key(kid: str, tenant_id: str):
     except Exception as err:  # noqa: PIE786
         raise
 
+
 @cached(cache=TTLCache(maxsize=16, ttl=3600))
 def _get_jwk_keys(tenant_id: str) -> List[Dict]:
     """Retrieves the JWK keys for a specified issuer
@@ -130,6 +133,7 @@ def _get_jwk_keys(tenant_id: str) -> List[Dict]:
         raise AADError("keys not found in jwk_keys")
 
     return jwk_keys.get("keys")
+
 
 @cached(cache=TTLCache(maxsize=16, ttl=3600))
 def _get_openid_config(tenant_id: str) -> Dict[str, Any]:

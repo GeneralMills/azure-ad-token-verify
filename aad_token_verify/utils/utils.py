@@ -1,6 +1,8 @@
+from typing import Any, Dict
+
 import requests
-from typing import Any, List, Dict
-from cachetools import cached, TTLCache
+from cachetools import TTLCache, cached
+
 
 @cached(cache=TTLCache(maxsize=16, ttl=3600))
 def get_openid_config(tenant_id: str = "common") -> Dict[str, Any]:
