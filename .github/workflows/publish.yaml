@@ -6,8 +6,6 @@ name: Publish to PyPi
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   publish:
