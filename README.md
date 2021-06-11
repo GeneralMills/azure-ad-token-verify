@@ -1,4 +1,4 @@
-[![Python package](https://github.com/GeneralMills/azure-ad-token-verify/workflows/Python%20package/badge.svg)](https://github.com/microsoft/azure-devops-python-api/actions)
+[![Python package](https://github.com/GeneralMills/azure-ad-token-verify/workflows/Python%20package/badge.svg)](https://github.com/GeneralMills/azure-ad-token-verify/actions)
 [![Python](https://img.shields.io/pypi/pyversions/azure-ad-token-verify.svg)](https://pypi.python.org/pypi/azure-ad-token-verify)
 # aad-token-verify
 A python utility library to verify an Azure Active Directory OAuth token. Meant for resource servers serving secured API endpoints (eg FastAPI)
