@@ -23,10 +23,10 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest isort black
     - name: Black check
-    - run: |
+      run: |
         black -l 120 --check --diff aad_token_verify tests
     - name: isort check
-    - run: |
+      run: |
         isort --check --diff --project=aad_token_verify aad_token_verify tests
     - name: Lint with flake8
       run: |
