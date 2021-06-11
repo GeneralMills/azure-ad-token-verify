@@ -10,7 +10,7 @@ with io.open(os.path.join(dir, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='aad-token-verify',
-    version='0.0.1',
+    version='0.1.0',
     description='A python utility library to verify an Azure Active Directory OAuth token',
     long_description=long_description,
     long_description_content_type='text/markdown',
