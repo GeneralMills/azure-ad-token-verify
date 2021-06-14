@@ -7,9 +7,9 @@ from cryptography.x509 import load_pem_x509_certificate
 from jwt import decode, get_unverified_header
 from jwt.exceptions import ExpiredSignatureError, InvalidAudienceError, InvalidIssuerError
 
-from .exceptions.aad_error import AADError
-from .exceptions.authorization_error import AuthorizationError
-from .exceptions.token_parse_error import TokenParseError
+from aad_token_verify.exceptions.aad_error import AADError
+from aad_token_verify.exceptions.authorization_error import AuthorizationError
+from aad_token_verify.exceptions.token_parse_error import TokenParseError
 
 
 def get_verified_payload(token: str, tenant_id: str = "common", audience_uris: List[str] = None) -> Dict[str, Any]:
