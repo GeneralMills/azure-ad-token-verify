@@ -3,7 +3,9 @@
 
 name: Publish to PyPi
 
-on: release
+on:
+  release:
+    types: [published]
 
 jobs:
   publish:
