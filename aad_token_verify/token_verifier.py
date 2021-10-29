@@ -33,7 +33,6 @@ def get_verified_payload(token: str, tenant_id: str = "common", audience_uris: L
         payload = decode(
             token,
             public_key,
-            verify=True,
             algorithms=["RS256"],
             audience=audience_uris,
             issuer=openid_config.get("issuer"),
