@@ -10,7 +10,7 @@ with io.open(os.path.join(dir, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='aad-token-verify',
-    version='0.2.0',
+    version='0.3.0',
     description='A python utility library to verify an Azure Active Directory OAuth token',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -32,7 +32,7 @@ setup(
     install_requires=[
         'requests>=2.25.1,<3',
         'PyJWT>=2.1.0,<3',
-        'cryptography>=41.0.1,<42',
+        'cryptography>=42.0.0,<43',
         'cachetools>=5.3.1,<6'
     ],
     keywords='azure ad token oauth verify jwt',
