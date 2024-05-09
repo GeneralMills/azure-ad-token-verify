@@ -16,7 +16,7 @@ setup(
     long_description_content_type='text/markdown',
     url='https://github.com/GeneralMills/azure-ad-token-verify',
     author=['Daniel Thompson'],
-    author_email='daniel.thompson2@genmills.com ',
+    author_email='daniel.thompson1@genmills.com ',
     license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',
